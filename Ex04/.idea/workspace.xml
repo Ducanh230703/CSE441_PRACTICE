@@ -16,13 +16,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41fba7f2-6502-4c30-b11c-8d605b8abb1e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cToF/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cToF/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cToF/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cToF/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex06/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex06/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ex06/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex06/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="41fba7f2-6502-4c30-b11c-8d605b8abb1e" name="Changes" comment="ex4 mainac" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,8 +32,21 @@
     </projectState>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Ducanh230703"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ducanh230703/CSE441_Practice.git",
+    "accountId": "6fab7583-dc95-4caa-afb9-e7a544834bed"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -134,6 +141,37 @@
       <option name="presentableId" value="Default" />
       <updated>1726906599866</updated>
     </task>
+    <task id="LOCAL-00001" summary="Ex01 02">
+      <option name="closed" value="true" />
+      <created>1728875596435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728875596435</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ex4 main">
+      <option name="closed" value="true" />
+      <created>1728875700914</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728875700914</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ex4 mainac">
+      <option name="closed" value="true" />
+      <created>1728875718961</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728875718961</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ex01 02" />
+    <MESSAGE value="ex4 main" />
+    <MESSAGE value="ex4 mainac" />
+    <option name="LAST_COMMIT_MESSAGE" value="ex4 mainac" />
   </component>
 </project>
