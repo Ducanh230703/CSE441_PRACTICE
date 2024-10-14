@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
+        btn = findViewById(R.id.btnNavigate);
+        btn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, SubActivity.class);
+            startActivity(intent);
         });
     }
 }
