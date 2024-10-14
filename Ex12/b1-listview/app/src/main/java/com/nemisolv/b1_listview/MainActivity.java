@@ -30,8 +30,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setupViews() {
-        lvPhone = findViewById(R.id.lv_phones);
-        txtTitle = findViewById(R.id.txt_title);
-    }
+
 }
