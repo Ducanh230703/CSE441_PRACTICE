@@ -21,20 +21,5 @@ public class MyService extends Service {
         mediaPlayer.setLooping(true);
     }
 
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        if(mediaPlayer.isPlaying()) {
-            mediaPlayer.pause();
-        } else {
-            mediaPlayer.start();
-        }
-        return super.onStartCommand(intent, flags, startId);
 
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mediaPlayer.stop();
-    }
 }
