@@ -78,17 +78,7 @@ public class MainActivity extends AppCompatActivity {
             if(chkReadCoding.isChecked()) {
                 hobbies+=chkReadCoding.getText()+"\n";
             }
-            String extraInfo = editTextInfo.getText().toString();
-            AlertDialog alertDialog = new AlertDialog.Builder(this)
-                    .setTitle("Information")
-                    .setMessage("Fullname: "+fullName+"\n"+
-                            "ID: "+cmnd+"\n"+
-                            "Degree: "+degree+"\n"+
-                            "Hobbies: "+hobbies+"\n"+
-                            "Extra Info: "+extraInfo)
-                    .setPositiveButton("Close", (dialog, which) -> dialog.cancel())
-                    .create();
-            alertDialog.show();
+
 
 
 
