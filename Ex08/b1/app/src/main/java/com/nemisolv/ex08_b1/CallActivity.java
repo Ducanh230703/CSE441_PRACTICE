@@ -43,11 +43,6 @@ public class CallActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v -> finish());
     }
 
-    @SuppressLint("WrongViewCast")
-    private void setupViews() {
-        imgBtnCall = findViewById(R.id.image_btn_send_sms);
-        btnBack = findViewById(R.id.btn_back);
-        editPhoneNum = findViewById(R.id.edit_sms);
 
 
     }
