@@ -14,7 +14,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private TextView txtView;
-    pri
+    private GridView gridView;
+    String [] values = {
+            "Android",
+            "iPhone",
+            "WindowsMobile",
+            "Blackberry",
+            "WebOS",
+            "Ubuntu",
+            "Windows7",
+            "Max OS X",
+            "Linux",
+            "OS/2"
     };
 
     @SuppressLint("MissingInflatedId")
