@@ -18,9 +18,5 @@ public class MainActivity extends AppCompatActivity {
 
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS) == 0) {
 
-        } else {
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.RECEIVE_SMS, android.Manifest.permission.READ_SMS}, 1);
-
         }
-    }
 }
