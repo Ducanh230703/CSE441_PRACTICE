@@ -110,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    private void setupViews() {
+        lvClass = findViewById(R.id.lv_class);
+        txtClassId = findViewById(R.id.txt_class_id);
+        txtClassName = findViewById(R.id.txt_class_name);
+        txtClassSize = findViewById(R.id.txt_class_size);
+        btnAdd = findViewById(R.id.btn_insert);
+        btnUpdate = findViewById(R.id.btn_update);
+        btnDelete = findViewById(R.id.btn_delete);
+        btnQuery = findViewById(R.id.btn_query);
     }
 }
