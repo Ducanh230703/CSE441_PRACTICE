@@ -52,7 +52,14 @@ public class ResultActivity extends AppCompatActivity {
 //            finish();
         });
 
-
+        imgFavorite.setOnClickListener(v -> {
+            song.setFavorite(song.isFavorite() ==1? 0 : 1);
+            imgFavorite.setVisibility( View.VISIBLE );
+            imgFavorite.setImageResource(song.isFavorite()==1 ? R.drawable.heart_fill : R.drawable.heart_outline);
+            ContentValues values = new ContentValues();
+            values.put("favorite", song.isFavorite());
+            MainActivity.db.update("songs", values, "id = ?", new String[]{song.getId()});
+        });
 
     }
 }
