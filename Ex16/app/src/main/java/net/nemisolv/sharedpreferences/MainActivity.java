@@ -62,7 +62,18 @@ public class MainActivity extends AppCompatActivity {
                editor.apply();
 
                // Update TextView
+               txtHistory.setText(history);
+           }catch(NumberFormatException ex) {
+                Toast.makeText(this, "Please enter valid numbers", Toast.LENGTH_SHORT).show();
+                ex.printStackTrace();
+           }
+        });
 
+        btnClear.setOnClickListener(v -> {
+            txtHistory.setText("");
+            editor.putString(KEY_HISTORY, "");
+            editor.apply();
+        });
 
     }
 
