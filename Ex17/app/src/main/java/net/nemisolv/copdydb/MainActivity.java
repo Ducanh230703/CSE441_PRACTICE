@@ -94,6 +94,18 @@ public class MainActivity extends AppCompatActivity {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
                 myOutput = Files.newOutputStream(Paths.get(outFileName));
             }
+            int size = myInput.available();
+            byte[] buffer = new byte[size];
+            myInput.read(buffer);
+            assert myOutput != null;
+            myOutput.write(buffer);
+            myOutput.flush();
+            myOutput.close();
+            myInput.close();
 
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
