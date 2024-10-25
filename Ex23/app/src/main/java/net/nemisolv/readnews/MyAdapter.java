@@ -25,20 +25,5 @@ public class MyAdapter extends ArrayAdapter<News> {
     }
 
     @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
-        News news = newsList.get(position);
-        ImageView ivImage = view.findViewById(R.id.img_thumb);
-        ivImage.setImageBitmap(news.getImage());
-        ((TextView)view.findViewById(R.id.txt_title)).setText(news.getTitle());
-        ((TextView)view.findViewById(R.id.txt_description)).setText(news.getDescription());
 
-        convertView.setOnClickListener(v -> {
-            // Open the news in a browser
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(news.getUrl()));
-            context.startActivity(intent);
-        });
-        return view;
-    }
 }
