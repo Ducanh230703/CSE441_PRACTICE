@@ -27,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
+        btn = findViewById(R.id.button);
+        btn.setOnClickListener(v -> {
+            asyncTask = new MyAsyncTask(this);
+            asyncTask.execute();
         });
     }
 }
