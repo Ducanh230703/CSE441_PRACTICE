@@ -1,0 +1,67 @@
+Index: Ex19/app/src/main/java/net/nemisolv/xmlreader/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package net.nemisolv.xmlreader;\r\n\r\nimport android.annotation.SuppressLint;\r\nimport android.os.Bundle;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.Button;\r\nimport android.widget.ListView;\r\n\r\nimport androidx.activity.EdgeToEdge;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.core.graphics.Insets;\r\nimport androidx.core.view.ViewCompat;\r\nimport androidx.core.view.WindowInsetsCompat;\r\n\r\nimport org.xmlpull.v1.XmlPullParser;\r\nimport org.xmlpull.v1.XmlPullParserException;\r\nimport org.xmlpull.v1.XmlPullParserFactory;\r\n\r\nimport java.io.IOException;\r\nimport java.io.InputStream;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class MainActivity extends AppCompatActivity {\r\n    ListView listView;\r\n    Button btnParser;\r\n    ArrayAdapter<String> adapter;\r\n    List<String> list;\r\n\r\n    @SuppressLint(\"MissingInflatedId\")\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        EdgeToEdge.enable(this);\r\n        setContentView(R.layout.activity_main);\r\n        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {\r\n            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());\r\n            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);\r\n            return insets;\r\n        });\r\n        listView = findViewById(R.id.list_view);\r\n        btnParser = findViewById(R.id.btn_parser);\r\n        list = new ArrayList<>();\r\n        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);\r\n        listView.setAdapter(adapter);\r\n        btnParser.setOnClickListener(v -> {\r\n            list.clear();\r\n            parseXML();\r\n            adapter.notifyDataSetChanged();\r\n        });\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex19/app/src/main/java/net/nemisolv/xmlreader/MainActivity.java b/Ex19/app/src/main/java/net/nemisolv/xmlreader/MainActivity.java
+--- a/Ex19/app/src/main/java/net/nemisolv/xmlreader/MainActivity.java	(revision 29a5915a84b8289d7fe28882645ae98c4bdea793)
++++ b/Ex19/app/src/main/java/net/nemisolv/xmlreader/MainActivity.java	(date 1729832388056)
+@@ -50,5 +50,55 @@
+         });
+     }
+ 
++    private void parseXML() {
++        try {
++            InputStream myinput = getAssets().open("employee.xml");
++            XmlPullParserFactory fc = XmlPullParserFactory.newInstance();
++            XmlPullParser parser = fc.newPullParser();
++            parser.setInput(myinput,null);
++            int eventType=-1;
++            String nodeName;
++            String datashow="";
++            while(eventType!=XmlPullParser.END_DOCUMENT)
++            {
++                eventType=parser.next();
++                switch(eventType)
++                {
++                    case XmlPullParser.START_DOCUMENT:
++                        break;
++                    case XmlPullParser.START_TAG:
++                        nodeName=parser.getName();
++                        if(nodeName.equals("employee")){
++                            datashow+=parser.getAttributeValue(0)+"-";
++                            datashow+=parser.getAttributeValue(1)+"-";
++                        }
++                        else if(nodeName.equals("name")){
++                            parser.next();
++                            datashow+=parser.getText()+"-";
++                        }
++                        else if(nodeName.equals("phone")){
++                            datashow+=parser.nextText();
++                        }
++                        break;
++                    case XmlPullParser.END_TAG:
++                        nodeName=parser.getName();
++                        if(nodeName.equals("employee")){
++                            list.add(datashow);
++                            datashow="";
++                        }
++                        break;
++                }
++                adapter.notifyDataSetChanged();
++            }
++        }
++        catch (IOException e1)
++        {
++            e1.printStackTrace();
++        }
++        catch (XmlPullParserException e2)
++        {
++            e2.printStackTrace();
++        }
+ 
++    }
+ }
+\ No newline at end of file
